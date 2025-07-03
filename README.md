@@ -67,7 +67,3 @@ export default tseslint.config([
   },
 ]);
 ```
-
-# menu-app
-
-menu-app challenge
