@@ -81,7 +81,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Цветовые схемы */
+/* Color schemes */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -95,7 +95,7 @@ button:focus-visible {
   }
 }
 
-/* Кастомные адаптивные утилиты */
+/* Custom adaprive utilities */
 @layer utilities {
   .responsive-padding {
     @apply p-4 md:p-6 lg:p-8 xl:p-10;

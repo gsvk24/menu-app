@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, onSearch }) => {
       placeholder="Search menu items..."
       value={query}
       onChange={(e) => onSearch(e.target.value)}
-      className="border p-2 w-full mb-4"
+      className="w-full p-2 mb-4 border"
     />
   );
 };

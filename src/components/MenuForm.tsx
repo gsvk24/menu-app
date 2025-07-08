@@ -33,7 +33,7 @@ const MenuForm: React.FC<MenuFormProps> = ({ onAddItem }) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
-        className="border p-2 w-full mb-2"
+        className="w-full p-2 mb-2 border"
       />
       <input
         type="text"
@@ -41,7 +41,7 @@ const MenuForm: React.FC<MenuFormProps> = ({ onAddItem }) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         required
-        className="border p-2 w-full mb-2"
+        className="w-full p-2 mb-2 border"
       />
       <input
         type="number"
@@ -49,7 +49,7 @@ const MenuForm: React.FC<MenuFormProps> = ({ onAddItem }) => {
         value={price}
         onChange={(e) => setPrice(Number(e.target.value))}
         required
-        className="border p-2 w-full mb-2"
+        className="w-full p-2 mb-2 border"
       />
       <input
         type="text"
@@ -57,9 +57,9 @@ const MenuForm: React.FC<MenuFormProps> = ({ onAddItem }) => {
         value={image}
         onChange={(e) => setImage(e.target.value)}
         required
-        className="border p-2 w-full mb-2"
+        className="w-full p-2 mb-2 border"
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button type="submit" className="p-2 text-white bg-blue-500 rounded">
         Add Item
       </button>
     </form>
