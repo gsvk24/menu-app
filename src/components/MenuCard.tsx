@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 // MenuItem interface
 interface MenuItem {
   id: number;
@@ -19,7 +21,7 @@ const MenuCard: React.FC<MenuCardProps> = ({ item }) => {
   const { name, description, price, image } = item;
 
   return (
-    <div className="overflow-hidden transition-transform duration-300 bg-white shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+    <div className="overflow-hidden transition-transform duration-300 bg-white border border-gray-200 shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
       <div className="h-48 overflow-hidden">
         <img
           src={image}

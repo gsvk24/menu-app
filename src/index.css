@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Адаптивные стили для корневых элементов */
+/* Responsive styles for root elements */
 @media (max-width: 767px) {
   :root {
     font-size: 14px;
@@ -37,7 +37,7 @@
   }
 }
 
-/* Адаптивные компоненты */
+/* Adaptive components */
 a {
   font-weight: 500;
   color: #646cff;
@@ -51,12 +51,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  @apply px-4 md:px-8 lg:px-12 xl:px-16; /* Адаптивные отступы */
+  @apply px-4 md:px-8 lg:px-12 xl:px-16; /* Adaptive indents */
 }
 
 h1 {
   line-height: 1.1;
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl; /* Адаптивный размер */
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl; /* Adaptive size */
 }
 
 button {
