@@ -68,10 +68,17 @@ const containerStyle = {
       item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    const handleSearchChange = (query: string) => {
+        setSearchQuery(query);
+};
+
     return (
   <div style={containerStyle}>
     <h1 style={{ marginTop: '1rem', marginBottom: '2rem' }}>Menu</h1>
-    <SearchBar />
+    <SearchBar 
+  query={searchQuery}
+  onSearchChange={handleSearchChange}
+/>
 <button
           onClick={() => setIsModalOpen(true)}
           className="p-2 mb-4 text-white bg-green-500 rounded"
@@ -92,3 +99,7 @@ const containerStyle = {
   export default App;
 
   
+
+
+
+
