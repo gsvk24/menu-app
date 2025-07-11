@@ -18,7 +18,3 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, onSearchChange }) => {
 };
 
 export default SearchBar;
-
-// This component is a simple search bar that takes a query and a callback function to handle changes.
-// It can be used in the main App component to filter menu items based on user input.
-
