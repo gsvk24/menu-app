@@ -1,19 +1,18 @@
-// src/components/SearchBar.tsx
 import React from "react";
 
 interface SearchBarProps {
   query: string;
-  onSearch: (query: string) => void;
+  onSearchChange: (query: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ query, onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ query, onSearchChange }) => {
   return (
     <input
       type="text"
       placeholder="Search menu items..."
       value={query}
-      onChange={(e) => onSearch(e.target.value)}
-      className="w-full p-2 mb-4 border"
+      onChange={(e) => onSearchChange(e.target.value)}
+      className="w-full p-2 mb-4 border rounded"
     />
   );
 };
