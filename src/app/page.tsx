@@ -62,7 +62,7 @@ export default function Page() {
   }) => {
     setMenuItems((prevItems) => [
       ...prevItems,
-      { ...item, id: Date.now() }, // Unuque ID
+      { ...item, id: crypto.randomUUID() },
     ]);
     setIsModalOpen(false);
   };
