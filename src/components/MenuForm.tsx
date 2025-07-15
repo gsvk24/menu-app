@@ -1,4 +1,4 @@
-// src/components/MenuForm.tsx
+"use client";
 import React, { useState } from "react";
 
 interface MenuFormProps {
