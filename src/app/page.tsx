@@ -21,7 +21,7 @@ export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Стартовые карточки
+  // Start items for the menu
   const starterItems = [
     {
       id: 1,
@@ -46,7 +46,7 @@ export default function Page() {
     },
   ];
 
-  // Инициализация стартовых карточек один раз
+  // Cards initialization
   useEffect(() => {
     if (menuItems.length === 0) {
       setMenuItems(starterItems);
@@ -62,7 +62,7 @@ export default function Page() {
   }) => {
     setMenuItems((prevItems) => [
       ...prevItems,
-      { ...item, id: Date.now() }, // Уникальный ID
+      { ...item, id: Date.now() }, // Unuque ID
     ]);
     setIsModalOpen(false);
   };
