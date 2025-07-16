@@ -21,7 +21,6 @@ export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Start items for the menu
   const starterItems = [
     {
       id: 1,
@@ -46,7 +45,6 @@ export default function Page() {
     },
   ];
 
-  // Cards initialization
   useEffect(() => {
     if (menuItems.length === 0) {
       setMenuItems(starterItems);
