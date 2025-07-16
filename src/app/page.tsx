@@ -1,9 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import "./App.css";
-import MenuCard from "./components/MenuCard";
-import MenuForm from "./components/MenuForm";
-import SearchBar from "./components/SearchBar";
-import Modal from "./components/Modal";
+import MenuCard from "@/components/MenuCard";
+import MenuForm from "@/components/MenuForm";
+import SearchBar from "@/components/SearchBar";
+import Modal from "@/components/Modal";
 
 const containerStyle = {
   width: "100%",
@@ -14,12 +15,12 @@ const containerStyle = {
   flexDirection: "column",
   gap: "3rem",
 };
-function App() {
+
+export default function Page() {
   const [menuItems, setMenuItems] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Start cards
   const starterItems = [
     {
       id: 1,
@@ -44,12 +45,12 @@ function App() {
     },
   ];
 
-  // Start cards initializaion once
   useEffect(() => {
     if (menuItems.length === 0) {
       setMenuItems(starterItems);
     }
-  }, []); // Empty dependencies array = only on mounting
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const addItem = (item: {
     name: string;
@@ -59,7 +60,7 @@ function App() {
   }) => {
     setMenuItems((prevItems) => [
       ...prevItems,
-      { ...item, id: Date.now() }, // Unique ID
+      { ...item, id: crypto.randomUUID() },
     ]);
     setIsModalOpen(false);
   };
@@ -89,9 +90,7 @@ function App() {
         {filteredItems.map((item) => (
           <MenuCard key={item.id} item={item} />
         ))}
-      </div>{" "}
+      </div>
     </div>
   );
 }
-
-export default App;
