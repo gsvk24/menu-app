@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc",
+    "server": "ts-node lib/server.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.8",
-    "apollo-server": "^3.13.0",
-    "graphql": "^16.11.0",
+    "@apollo/client": "3.13.8",
+    "apollo-server": "3.13.0",
+    "graphql": "16.11.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -27,6 +29,7 @@
     "eslint-config-next": "15.3.5",
     "postcss": "8.5.6",
     "tailwindcss": "4.1.11",
+    "ts-node": "^10.9.2",
     "typescript": "5.8.3"
   }
 }
