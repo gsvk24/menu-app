@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MenuCard from "@/components/MenuCard";
-import MenuForm from "@/components/MenuForm";
-import SearchBar from "@/components/SearchBar";
-import Modal from "@/components/Modal";
+import MenuCard from "../components/MenuCard";
+import MenuForm from "../components/MenuForm";
+import SearchBar from "../components/SearchBar";
+import Modal from "../components/Modal";
 import { starterItems } from "../../lib/constants";
 
 const containerStyle = {

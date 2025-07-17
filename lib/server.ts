@@ -1,22 +1,29 @@
 import { ApolloServer, gql } from "apollo-server";
+import { starterItems } from "./constants.ts";
 
 const typeDefs = gql`
+  type StarterItem {
+    id: ID!
+    name: String!
+    description: String
+    price: Float
+    image: String
+  }
+
   type Query {
-    hello: String
+    starterItems: [StarterItem!]!
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: () => "Hello from Apollo Server v3!",
+    starterItems: () => starterItems,
   },
 };
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+const PORT = process.env.PORT || 4000;
+const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen({ port: 4000 }).then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+server.listen(PORT).then(({ url }) => {
+  console.log(`🚀 Сервер запущен по адресу ${url}`);
 });
