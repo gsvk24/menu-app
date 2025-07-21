@@ -66,8 +66,8 @@ export default function Page() {
   };
 
   return (
-    <div style={containerStyle}>
-      <h1 style={{ marginTop: "1rem", marginBottom: "2rem" }}>Menu</h1>
+    <div>
+      <h1>Menu</h1>
       <SearchBar query={searchQuery} onSearchChange={handleSearchChange} />
       <button
         onClick={() => setIsModalOpen(true)}
