@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MenuCard from "../components/MenuCard";
-import MenuForm from "../components/MenuForm";
-import SearchBar from "../components/SearchBar";
-import Modal from "../components/Modal";
-import { starterItems } from "../../lib/constants";
+import MenuCard from "../src/components/MenuCard";
+import MenuForm from "../src/components/MenuForm";
+import SearchBar from "../src/components/SearchBar";
+import Modal from "../src/components/Modal";
 
 const containerStyle = {
   width: "100%",
@@ -23,23 +22,39 @@ export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (menuItems.length === 0) {
-      setMenuItems(starterItems);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetch("/api/menu")
+      .then((res) => res.json())
+      .then(setMenuItems);
   }, []);
 
-  const addItem = (item: {
+  const addItem = async (item: {
     name: string;
     description: string;
     price: number;
     image: string;
   }) => {
-    setMenuItems((prevItems) => [
-      ...prevItems,
-      { ...item, id: crypto.randomUUID() },
-    ]);
-    setIsModalOpen(false);
+    try {
+      const response = await fetch("/api/menu", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+      });
+
+      if (!response.ok) {
+        throw new Error("Ошибка при создании меню");
+      }
+
+      const newItem = await response.json();
+
+      // Добавляем полученный элемент (с id из базы)
+      setMenuItems((prevItems) => [...prevItems, newItem]);
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("Ошибка добавления:", error);
+      alert("Не удалось добавить блюдо. Попробуйте ещё раз.");
+    }
   };
 
   const filteredItems = menuItems.filter((item) =>
