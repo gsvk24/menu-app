@@ -9,6 +9,7 @@ html {
   background-color: #242424;
 }
 
+/* Responsive styles for root elements */
 @media (max-width: 767px) {
   :root {
     font-size: 14px;
@@ -30,6 +31,7 @@ html {
   }
 }
 
+/* Adaptive components */
 a {
   font-weight: 500;
   color: #646cff;
@@ -43,12 +45,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  @apply px-4 md:px-8 lg:px-12 xl:px-16; 
+  @apply px-4 md:px-8 lg:px-12 xl:px-16; /* Adaptive indents */
 }
 
 h1 {
   line-height: 1.1;
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl; 
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl; /* Adaptive size */
+}
 
 button {
   border-radius: 8px;
@@ -71,6 +74,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Color schemes */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -84,6 +88,7 @@ button:focus-visible {
   }
 }
 
+/* Custom adaprive utilities */
 @layer utilities {
   .responsive-padding {
     @apply p-4 md:p-6 lg:p-8 xl:p-10;

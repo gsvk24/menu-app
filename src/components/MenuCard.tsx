@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 
+// MenuItem interface
 interface MenuItem {
   id: number;
   name: string;
@@ -9,10 +10,12 @@ interface MenuItem {
   image: string;
 }
 
+// Props for MenuCard component
 interface MenuCardProps {
   item: MenuItem;
 }
 
+// Menu card component
 const MenuCard: React.FC<MenuCardProps> = ({ item }) => {
   const { name, description, price, image } = item;
 
