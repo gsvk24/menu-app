@@ -18,10 +18,6 @@ const MenuForm: React.FC<MenuFormProps> = ({ onAddItem }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || price <= 0 || !image.startsWith("http")) {
-      alert("Please fill all fields correctly.");
-      return;
-    }
     onAddItem({ name, description, price, image });
     setName("");
     setDescription("");
